@@ -5,4 +5,24 @@ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.1.1/docker-compose.y
 
 mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+sudo docker compose run airflow-cli airflow config list
+
+sudo docker compose up airflow-init
+sudo docker compose down --volumes --remove-orphans
+sudo docker compose up
+sudo docker compose run airflow-worker airflow info
+
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.1.1/airflow.sh'
+chmod +x airflow.sh
+./airflow.sh info
+./airflow.sh bash
+./airflow.sh python
+
+ENDPOINT_URL="http://localhost:8080"
+curl -X GET  \
+    --user "airflow:airflow" \
+    "${ENDPOINT_URL}/api/v1/pools"
+
+sudo docker compose down --volumes --rmi all
 ```
