@@ -7,6 +7,12 @@ mkdir -p ./dags ./logs ./plugins ./config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 
 sudo docker compose run airflow-cli airflow config list
+sudo docker compose up airflow-init
+sudo docker compose up -d
+
+http://49.232.232.231:8080/
+admin
+admin
 
 sudo docker compose up airflow-init
 sudo docker compose down --volumes --remove-orphans

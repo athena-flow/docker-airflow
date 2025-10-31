@@ -458,3 +458,646 @@ spark_inject_parent_job_info = False
 spark_inject_transport_info = False
 [standard]
 venv_install_method = auto
+
+sudo docker compose up airflow-init
+WARN[0000] Found orphan containers ([docker_proxy_1 docker_space_1 docker_admin_1 docker_live_1 docker_web_1 docker_beat-worker_1 docker_worker_1 docker_api_1 docker_migrator_1 docker_plane-redis_1 docker_plane-db_1 docker_plane-minio_1 docker_plane-mq_1 hbbs hbbr]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up.
+[+] Running 3/0
+ ✔ Container docker-redis-1         Running                                                                                                                                  0.0s
+ ✔ Container docker-postgres-1      Running                                                                                                                                  0.0s
+ ✔ Container docker-airflow-init-1  Created                                                                                                                                  0.1s
+Attaching to airflow-init-1
+airflow-init-1  |
+airflow-init-1  | WARNING!!!: Not enough Disk space available for Docker.
+airflow-init-1  | At least 10 GBs recommended. You have 6.2G
+airflow-init-1  |
+airflow-init-1  |
+airflow-init-1  | WARNING!!!: You have not enough resources to run Airflow (see above)!
+airflow-init-1  | Please follow the instructions to increase amount of resources available:
+airflow-init-1  |    https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin
+airflow-init-1  |
+airflow-init-1  |
+airflow-init-1  | Creating missing opt dirs if missing:
+airflow-init-1  |
+airflow-init-1  |
+airflow-init-1  | Airflow version:
+airflow-init-1  | The container is run as root user. For security, consider using a regular user account.
+airflow-init-1  |
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | 2025-10-30T13:19:50.479890Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:19:50.480078Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:19:50.486353Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:19:50.486464Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:19:50.487062Z [info     ] Creating Airflow database tables from the ORM [airflow.utils.db] loc=db.py:684
+airflow-init-1  | 2025-10-30T13:19:50.487149Z [info     ] Creating context               [airflow.utils.db] loc=db.py:689
+airflow-init-1  | 2025-10-30T13:19:50.494371Z [info     ] Binding engine                 [airflow.utils.db] loc=db.py:691
+airflow-init-1  | 2025-10-30T13:19:50.494479Z [info     ] Pool status: Pool size: 5  Connections in pool: 0 Current Overflow: -3 Current Checked out connections: 2 [airflow.utils.db] loc=db.py:693
+airflow-init-1  | 2025-10-30T13:19:50.494566Z [info     ] Creating metadata              [airflow.utils.db] loc=db.py:695
+airflow-init-1  | 2025-10-30T13:19:50.954871Z [info     ] Getting alembic config         [airflow.utils.db] loc=db.py:698
+airflow-init-1  | 2025-10-30T13:19:50.955591Z [info     ] Stamping migration head        [airflow.utils.db] loc=db.py:705
+airflow-init-1  | 2025-10-30T13:19:50.957960Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:19:50.958064Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:19:51.045292Z [info     ] Running stamp_revision  -> cc92b33c6709 [alembic.runtime.migration] loc=migration.py:622
+airflow-init-1  | 2025-10-30T13:19:51.048509Z [info     ] Airflow database tables created [airflow.utils.db] loc=db.py:708
+airflow-init-1  | 2025-10-30T13:19:51.049526Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:19:51.049643Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | DB: postgresql+psycopg2://airflow:***@postgres/airflow
+airflow-init-1  | Performing upgrade to the metadata database postgresql+psycopg2://airflow:***@postgres/airflow
+airflow-init-1  | 2025-10-30T13:19:51.050877Z [info     ] Creating FABDBManager tables from the ORM [airflow.providers.fab.auth_manager.models.db.FABDBManager] loc=db_manager.py:92
+airflow-init-1  | 2025-10-30T13:19:51.153930Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:19:51.154073Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:19:51.159960Z [info     ] Running stamp_revision  -> 6709f7a774b9 [alembic.runtime.migration] loc=migration.py:622
+airflow-init-1  | 2025-10-30T13:19:51.161335Z [info     ] FABDBManager tables have been created from the ORM [airflow.providers.fab.auth_manager.models.db.FABDBManager] loc=db_manager.py:97
+airflow-init-1  | Database migrating done!
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/flask_limiter/extension.py:324 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+airflow-init-1  | 2025-10-30T13:19:55.677538Z [info     ] Inserted Role: Admin           [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1274
+airflow-init-1  | 2025-10-30T13:19:55.681325Z [warning  ] No user yet created, use flask fab command to do it. [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:927
+airflow-init-1  | 2025-10-30T13:19:55.689422Z [info     ] Created Permission View: can read on DAGs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.692878Z [info     ] Created Permission View: can edit on DAGs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.698297Z [info     ] Created Permission View: can delete on DAGs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.708117Z [info     ] Inserted Role: Public          [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1274
+airflow-init-1  | 2025-10-30T13:19:55.710009Z [info     ] Inserted Role: Viewer          [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1274
+airflow-init-1  | 2025-10-30T13:19:55.714693Z [info     ] Added Permission can read on DAGs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.717902Z [info     ] Created Permission View: can read on DAG Dependencies [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.719705Z [info     ] Added Permission can read on DAG Dependencies to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.723227Z [info     ] Created Permission View: can read on DAG Code [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.724744Z [info     ] Added Permission can read on DAG Code to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.727963Z [info     ] Created Permission View: can read on DAG Runs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.731171Z [info     ] Added Permission can read on DAG Runs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.735084Z [info     ] Created Permission View: can read on DAG Versions [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.737141Z [info     ] Added Permission can read on DAG Versions to role Viewer [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.740681Z [info     ] Created Permission View: can read on DAG Warnings [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.741901Z [info     ] Added Permission can read on DAG Warnings to role Viewer [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.744315Z [info     ] Created Permission View: can read on Assets [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.745754Z [info     ] Added Permission can read on Assets to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.748840Z [info     ] Created Permission View: can read on Asset Aliases [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.750192Z [info     ] Added Permission can read on Asset Aliases to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.753487Z [info     ] Created Permission View: can read on Backfills [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.754912Z [info     ] Added Permission can read on Backfills to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.757926Z [info     ] Created Permission View: can read on Cluster Activity [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.759284Z [info     ] Added Permission can read on Cluster Activity to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.761797Z [info     ] Created Permission View: can read on Pools [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.763207Z [info     ] Added Permission can read on Pools to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.766308Z [info     ] Created Permission View: can read on ImportError [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.767790Z [info     ] Added Permission can read on ImportError to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.770313Z [info     ] Created Permission View: can read on Jobs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.771535Z [info     ] Added Permission can read on Jobs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.774385Z [info     ] Created Permission View: can read on My Password [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.775712Z [info     ] Added Permission can read on My Password to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.778941Z [info     ] Created Permission View: can edit on My Password [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.780320Z [info     ] Added Permission can edit on My Password to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.782931Z [info     ] Created Permission View: can read on My Profile [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.784141Z [info     ] Added Permission can read on My Profile to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.786387Z [info     ] Created Permission View: can edit on My Profile [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.787777Z [info     ] Added Permission can edit on My Profile to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.790283Z [info     ] Created Permission View: can read on SLA Misses [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.791707Z [info     ] Added Permission can read on SLA Misses to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.794326Z [info     ] Created Permission View: can read on Task Instances [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.795593Z [info     ] Added Permission can read on Task Instances to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.798832Z [info     ] Created Permission View: can read on Task Logs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.800126Z [info     ] Added Permission can read on Task Logs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.803024Z [info     ] Created Permission View: can read on XComs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.804328Z [info     ] Added Permission can read on XComs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.806839Z [info     ] Created Permission View: can read on HITL Detail [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.808115Z [info     ] Added Permission can read on HITL Detail to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.810966Z [info     ] Created Permission View: can read on Website [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.812209Z [info     ] Added Permission can read on Website to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.815314Z [info     ] Created Permission View: menu access on Browse [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.816479Z [info     ] Added Permission menu access on Browse to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.819231Z [info     ] Created Permission View: menu access on DAGs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.820565Z [info     ] Added Permission menu access on DAGs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.822810Z [info     ] Created Permission View: menu access on DAG Dependencies [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.824345Z [info     ] Added Permission menu access on DAG Dependencies to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.826816Z [info     ] Created Permission View: menu access on DAG Runs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.827981Z [info     ] Added Permission menu access on DAG Runs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.830075Z [info     ] Created Permission View: menu access on Assets [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.831250Z [info     ] Added Permission menu access on Assets to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.833589Z [info     ] Created Permission View: menu access on Cluster Activity [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.834817Z [info     ] Added Permission menu access on Cluster Activity to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.837742Z [info     ] Created Permission View: menu access on Documentation [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.839191Z [info     ] Added Permission menu access on Documentation to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.841628Z [info     ] Created Permission View: menu access on Docs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.843095Z [info     ] Added Permission menu access on Docs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.845321Z [info     ] Created Permission View: menu access on Jobs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.846492Z [info     ] Added Permission menu access on Jobs to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.848905Z [info     ] Created Permission View: menu access on SLA Misses [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.850105Z [info     ] Added Permission menu access on SLA Misses to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.852325Z [info     ] Created Permission View: menu access on Task Instances [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.853764Z [info     ] Added Permission menu access on Task Instances to role Viewer [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.855852Z [info     ] Inserted Role: User            [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1274
+airflow-init-1  | 2025-10-30T13:19:55.857673Z [info     ] Added Permission can read on DAGs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.859956Z [info     ] Added Permission can read on DAG Dependencies to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.862026Z [info     ] Added Permission can read on DAG Code to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.864562Z [info     ] Added Permission can read on DAG Runs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.867221Z [info     ] Added Permission can read on DAG Versions to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.869640Z [info     ] Added Permission can read on DAG Warnings to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.872025Z [info     ] Added Permission can read on Assets to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.874597Z [info     ] Added Permission can read on Asset Aliases to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.878841Z [info     ] Added Permission can read on Backfills to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.884874Z [info     ] Added Permission can read on Cluster Activity to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.888261Z [info     ] Added Permission can read on Pools to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.890703Z [info     ] Added Permission can read on ImportError to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.892862Z [info     ] Added Permission can read on Jobs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.895099Z [info     ] Added Permission can read on My Password to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.897299Z [info     ] Added Permission can edit on My Password to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.899431Z [info     ] Added Permission can read on My Profile to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.901586Z [info     ] Added Permission can edit on My Profile to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.903743Z [info     ] Added Permission can read on SLA Misses to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.906008Z [info     ] Added Permission can read on Task Instances to role User [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.908200Z [info     ] Added Permission can read on Task Logs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.910288Z [info     ] Added Permission can read on XComs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.912547Z [info     ] Added Permission can read on HITL Detail to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.914604Z [info     ] Added Permission can read on Website to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.916711Z [info     ] Added Permission menu access on Browse to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.918784Z [info     ] Added Permission menu access on DAGs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.920831Z [info     ] Added Permission menu access on DAG Dependencies to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.922946Z [info     ] Added Permission menu access on DAG Runs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.925181Z [info     ] Added Permission menu access on Assets to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.927275Z [info     ] Added Permission menu access on Cluster Activity to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.929297Z [info     ] Added Permission menu access on Documentation to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.931477Z [info     ] Added Permission menu access on Docs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.933641Z [info     ] Added Permission menu access on Jobs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.936036Z [info     ] Added Permission menu access on SLA Misses to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.938198Z [info     ] Added Permission menu access on Task Instances to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.939377Z [info     ] Added Permission can edit on DAGs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.940491Z [info     ] Added Permission can delete on DAGs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.943106Z [info     ] Created Permission View: can create on Task Instances [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.944690Z [info     ] Added Permission can create on Task Instances to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.946903Z [info     ] Created Permission View: can edit on Task Instances [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.948154Z [info     ] Added Permission can edit on Task Instances to role User [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.950382Z [info     ] Created Permission View: can delete on Task Instances [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.951575Z [info     ] Added Permission can delete on Task Instances to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.954017Z [info     ] Created Permission View: can create on DAG Runs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.955611Z [info     ] Added Permission can create on DAG Runs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.957993Z [info     ] Created Permission View: can edit on DAG Runs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.959199Z [info     ] Added Permission can edit on DAG Runs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.961393Z [info     ] Created Permission View: can delete on DAG Runs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.962641Z [info     ] Added Permission can delete on DAG Runs to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.964832Z [info     ] Created Permission View: can edit on HITL Detail [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.966110Z [info     ] Added Permission can edit on HITL Detail to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.968510Z [info     ] Created Permission View: can create on Assets [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:55.969791Z [info     ] Added Permission can create on Assets to role User [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.971761Z [info     ] Inserted Role: Op              [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1274
+airflow-init-1  | 2025-10-30T13:19:55.974589Z [info     ] Added Permission can read on DAGs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.978590Z [info     ] Added Permission can read on DAG Dependencies to role Op [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.983925Z [info     ] Added Permission can read on DAG Code to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.987187Z [info     ] Added Permission can read on DAG Runs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.989630Z [info     ] Added Permission can read on DAG Versions to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.992293Z [info     ] Added Permission can read on DAG Warnings to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.995225Z [info     ] Added Permission can read on Assets to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:55.997837Z [info     ] Added Permission can read on Asset Aliases to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.000299Z [info     ] Added Permission can read on Backfills to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.002844Z [info     ] Added Permission can read on Cluster Activity to role Op [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.005572Z [info     ] Added Permission can read on Pools to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.008125Z [info     ] Added Permission can read on ImportError to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.010683Z [info     ] Added Permission can read on Jobs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.013393Z [info     ] Added Permission can read on My Password to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.017223Z [info     ] Added Permission can edit on My Password to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.022127Z [info     ] Added Permission can read on My Profile to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.025586Z [info     ] Added Permission can edit on My Profile to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.028532Z [info     ] Added Permission can read on SLA Misses to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.030979Z [info     ] Added Permission can read on Task Instances to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.033343Z [info     ] Added Permission can read on Task Logs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.035846Z [info     ] Added Permission can read on XComs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.039082Z [info     ] Added Permission can read on HITL Detail to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.043878Z [info     ] Added Permission can read on Website to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.050231Z [info     ] Added Permission menu access on Browse to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.054120Z [info     ] Added Permission menu access on DAGs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.057272Z [info     ] Added Permission menu access on DAG Dependencies to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.061123Z [info     ] Added Permission menu access on DAG Runs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.067520Z [info     ] Added Permission menu access on Assets to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.073002Z [info     ] Added Permission menu access on Cluster Activity to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.076157Z [info     ] Added Permission menu access on Documentation to role Op [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.079112Z [info     ] Added Permission menu access on Docs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.082468Z [info     ] Added Permission menu access on Jobs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.085289Z [info     ] Added Permission menu access on SLA Misses to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.088531Z [info     ] Added Permission menu access on Task Instances to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.090105Z [info     ] Added Permission can edit on DAGs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.091789Z [info     ] Added Permission can delete on DAGs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.094947Z [info     ] Added Permission can create on Task Instances to role Op [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.097502Z [info     ] Added Permission can edit on Task Instances to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.099979Z [info     ] Added Permission can delete on Task Instances to role Op [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.102480Z [info     ] Added Permission can create on DAG Runs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.105107Z [info     ] Added Permission can edit on DAG Runs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.107596Z [info     ] Added Permission can delete on DAG Runs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.110251Z [info     ] Added Permission can edit on HITL Detail to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.112813Z [info     ] Added Permission can create on Assets to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.116541Z [info     ] Created Permission View: menu access on Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.118807Z [info     ] Added Permission menu access on Admin to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.126658Z [info     ] Created Permission View: menu access on Configurations [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.131590Z [info     ] Added Permission menu access on Configurations to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.135177Z [info     ] Created Permission View: menu access on Connections [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.136664Z [info     ] Added Permission menu access on Connections to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.139928Z [info     ] Created Permission View: menu access on Pools [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.141362Z [info     ] Added Permission menu access on Pools to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.144607Z [info     ] Created Permission View: menu access on Plugins [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.146021Z [info     ] Added Permission menu access on Plugins to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.149163Z [info     ] Created Permission View: menu access on Variables [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.150535Z [info     ] Added Permission menu access on Variables to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.153587Z [info     ] Created Permission View: menu access on Providers [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.155146Z [info     ] Added Permission menu access on Providers to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.157949Z [info     ] Created Permission View: menu access on XComs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.159363Z [info     ] Added Permission menu access on XComs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.162299Z [info     ] Created Permission View: menu access on HITL Detail [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.163741Z [info     ] Added Permission menu access on HITL Detail to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.166266Z [info     ] Created Permission View: can read on Configurations [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.167932Z [info     ] Added Permission can read on Configurations to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.170328Z [info     ] Created Permission View: can create on Connections [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.171587Z [info     ] Added Permission can create on Connections to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.173740Z [info     ] Created Permission View: can read on Connections [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.175035Z [info     ] Added Permission can read on Connections to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.177255Z [info     ] Created Permission View: can edit on Connections [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.179097Z [info     ] Added Permission can edit on Connections to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.181284Z [info     ] Created Permission View: can delete on Connections [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.182571Z [info     ] Added Permission can delete on Connections to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.184779Z [info     ] Created Permission View: can create on Pools [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.186031Z [info     ] Added Permission can create on Pools to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.188174Z [info     ] Created Permission View: can edit on Pools [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.189985Z [info     ] Added Permission can edit on Pools to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.193548Z [info     ] Created Permission View: can delete on Pools [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.197034Z [info     ] Added Permission can delete on Pools to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.204163Z [info     ] Created Permission View: can read on Plugins [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.206311Z [info     ] Added Permission can read on Plugins to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.209440Z [info     ] Created Permission View: can read on Providers [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.211264Z [info     ] Added Permission can read on Providers to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.213721Z [info     ] Created Permission View: can create on Variables [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.215347Z [info     ] Added Permission can create on Variables to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.217572Z [info     ] Created Permission View: can read on Variables [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.218985Z [info     ] Added Permission can read on Variables to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.221321Z [info     ] Created Permission View: can edit on Variables [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.222710Z [info     ] Added Permission can edit on Variables to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.224825Z [info     ] Created Permission View: can delete on Variables [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.226085Z [info     ] Added Permission can delete on Variables to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.228307Z [info     ] Created Permission View: can delete on XComs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.229608Z [info     ] Added Permission can delete on XComs to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.232535Z [info     ] Created Permission View: can delete on Assets [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.234067Z [info     ] Added Permission can delete on Assets to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.236339Z [info     ] Created Permission View: can create on Backfills [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.237819Z [info     ] Added Permission can create on Backfills to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.241329Z [info     ] Created Permission View: can edit on Backfills [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.243888Z [info     ] Added Permission can edit on Backfills to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.249813Z [info     ] Created Permission View: can delete on Backfills [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.251960Z [info     ] Added Permission can delete on Backfills to role Op [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.253662Z [info     ] Added Permission can read on DAGs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.256556Z [info     ] Added Permission can read on DAG Dependencies to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.258915Z [info     ] Added Permission can read on DAG Code to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.261209Z [info     ] Added Permission can read on DAG Runs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.263570Z [info     ] Added Permission can read on DAG Versions to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.265958Z [info     ] Added Permission can read on DAG Warnings to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.268512Z [info     ] Added Permission can read on Assets to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.270958Z [info     ] Added Permission can read on Asset Aliases to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.273599Z [info     ] Added Permission can read on Backfills to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.276102Z [info     ] Added Permission can read on Cluster Activity to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.278708Z [info     ] Added Permission can read on Pools to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.281134Z [info     ] Added Permission can read on ImportError to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.283681Z [info     ] Added Permission can read on Jobs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.286101Z [info     ] Added Permission can read on My Password to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.288908Z [info     ] Added Permission can edit on My Password to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.291552Z [info     ] Added Permission can read on My Profile to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.294290Z [info     ] Added Permission can edit on My Profile to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.296792Z [info     ] Added Permission can read on SLA Misses to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.299377Z [info     ] Added Permission can read on Task Instances to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.301803Z [info     ] Added Permission can read on Task Logs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.304481Z [info     ] Added Permission can read on XComs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.307018Z [info     ] Added Permission can read on HITL Detail to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.309690Z [info     ] Added Permission can read on Website to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.313452Z [info     ] Added Permission menu access on Browse to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.318575Z [info     ] Added Permission menu access on DAGs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.321863Z [info     ] Added Permission menu access on DAG Dependencies to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.324526Z [info     ] Added Permission menu access on DAG Runs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.326769Z [info     ] Added Permission menu access on Assets to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.329085Z [info     ] Added Permission menu access on Cluster Activity to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.331250Z [info     ] Added Permission menu access on Documentation to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.333391Z [info     ] Added Permission menu access on Docs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.335710Z [info     ] Added Permission menu access on Jobs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.337813Z [info     ] Added Permission menu access on SLA Misses to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.340074Z [info     ] Added Permission menu access on Task Instances to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.341737Z [info     ] Added Permission can edit on DAGs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.343128Z [info     ] Added Permission can delete on DAGs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.345412Z [info     ] Added Permission can create on Task Instances to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.347603Z [info     ] Added Permission can edit on Task Instances to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.349831Z [info     ] Added Permission can delete on Task Instances to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.352262Z [info     ] Added Permission can create on DAG Runs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.355070Z [info     ] Added Permission can edit on DAG Runs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.359642Z [info     ] Added Permission can delete on DAG Runs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.364546Z [info     ] Added Permission can edit on HITL Detail to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.367859Z [info     ] Added Permission can create on Assets to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.370913Z [info     ] Added Permission menu access on Admin to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.373448Z [info     ] Added Permission menu access on Configurations to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.375712Z [info     ] Added Permission menu access on Connections to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.377986Z [info     ] Added Permission menu access on Pools to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.380609Z [info     ] Added Permission menu access on Plugins to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.383007Z [info     ] Added Permission menu access on Variables to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.385374Z [info     ] Added Permission menu access on Providers to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.388151Z [info     ] Added Permission menu access on XComs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.390388Z [info     ] Added Permission menu access on HITL Detail to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.393223Z [info     ] Added Permission can read on Configurations to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.396076Z [info     ] Added Permission can create on Connections to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.398356Z [info     ] Added Permission can read on Connections to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.401139Z [info     ] Added Permission can edit on Connections to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.403786Z [info     ] Added Permission can delete on Connections to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.406392Z [info     ] Added Permission can create on Pools to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.409109Z [info     ] Added Permission can edit on Pools to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.411881Z [info     ] Added Permission can delete on Pools to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.414360Z [info     ] Added Permission can read on Plugins to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.416599Z [info     ] Added Permission can read on Providers to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.419174Z [info     ] Added Permission can create on Variables to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.421310Z [info     ] Added Permission can read on Variables to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.423998Z [info     ] Added Permission can edit on Variables to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.426099Z [info     ] Added Permission can delete on Variables to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.428509Z [info     ] Added Permission can delete on XComs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.431448Z [info     ] Added Permission can delete on Assets to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.433977Z [info     ] Added Permission can create on Backfills to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.436712Z [info     ] Added Permission can edit on Backfills to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.440266Z [info     ] Added Permission can delete on Backfills to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.443692Z [info     ] Created Permission View: can read on Audit Logs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.444961Z [info     ] Added Permission can read on Audit Logs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.447694Z [info     ] Created Permission View: menu access on Audit Logs [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.449049Z [info     ] Added Permission menu access on Audit Logs to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.451874Z [info     ] Created Permission View: can read on Task Reschedules [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.453224Z [info     ] Added Permission can read on Task Reschedules to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.455816Z [info     ] Created Permission View: menu access on Task Reschedules [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.457142Z [info     ] Added Permission menu access on Task Reschedules to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.460347Z [info     ] Created Permission View: can read on Triggers [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.462581Z [info     ] Added Permission can read on Triggers to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.467954Z [info     ] Created Permission View: menu access on Triggers [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.470919Z [info     ] Added Permission menu access on Triggers to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.474747Z [info     ] Created Permission View: can read on Passwords [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.476400Z [info     ] Added Permission can read on Passwords to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.479637Z [info     ] Created Permission View: can edit on Passwords [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.481216Z [info     ] Added Permission can edit on Passwords to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.484541Z [info     ] Created Permission View: can read on Roles [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.485869Z [info     ] Added Permission can read on Roles to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.488402Z [info     ] Created Permission View: can edit on Roles [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.489748Z [info     ] Added Permission can edit on Roles to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.543248Z [info     ] Created Permission View: can create on Users [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.547918Z [info     ] Added Permission can create on Users to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.551706Z [info     ] Created Permission View: can read on Users [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.557339Z [info     ] Added Permission can read on Users to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.562748Z [info     ] Created Permission View: can edit on Users [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.567111Z [info     ] Added Permission can edit on Users to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.570327Z [info     ] Created Permission View: can delete on Users [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.573538Z [info     ] Added Permission can delete on Users to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.573904Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.578507Z [info     ] Created Permission View: menu access on List Users [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.582257Z [info     ] Added Permission menu access on List Users to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.586430Z [info     ] Created Permission View: menu access on Security [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.589400Z [info     ] Added Permission menu access on Security to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.599606Z [info     ] Created Permission View: can create on Roles [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.601419Z [info     ] Added Permission can create on Roles to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.604324Z [info     ] Created Permission View: can delete on Roles [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.605790Z [info     ] Added Permission can delete on Roles to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.606058Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.610861Z [info     ] Created Permission View: menu access on List Roles [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.614429Z [info     ] Added Permission menu access on List Roles to role Admin [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.625524Z [info     ] Created Permission View: can read on User Stats Chart [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.629062Z [info     ] Added Permission can read on User Stats Chart to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.629327Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.634710Z [info     ] Created Permission View: menu access on User's Statistics [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.637866Z [info     ] Added Permission menu access on User's Statistics to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.660134Z [info     ] Created Permission View: can read on Permissions [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.665730Z [info     ] Added Permission can read on Permissions to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.666578Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.678060Z [info     ] Created Permission View: menu access on Actions [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.684282Z [info     ] Added Permission menu access on Actions to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.702100Z [info     ] Created Permission View: can read on View Menus [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.706002Z [info     ] Added Permission can read on View Menus to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.706305Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.710846Z [info     ] Created Permission View: menu access on Resources [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.714400Z [info     ] Added Permission menu access on Resources to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:56.726509Z [info     ] Created Permission View: can read on Permission Views [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.729532Z [info     ] Added Permission can read on Permission Views to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:19:56.729798Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | 2025-10-30T13:19:56.733935Z [info     ] Created Permission View: menu access on Permission Pairs [airflow.providers.fab.auth_manager.security_manager.override]
+loc=override.py:1655
+airflow-init-1  | 2025-10-30T13:19:56.737034Z [info     ] Added Permission menu access on Permission Pairs to role Admin [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1706
+airflow-init-1  | 2025-10-30T13:19:58.932155Z [info     ] Added user airflow             [airflow.providers.fab.auth_manager.security_manager.override] loc=override.py:1375
+airflow-init-1  | User "airflow" created with role "Admin"
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | 3.1.1
+airflow-init-1  |
+airflow-init-1  | Files in shared volumes:
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/config:
+airflow-init-1  | total 120
+airflow-init-1  | drwxrwxrwx 2    1000 1000   4096 Oct 30 13:05 .
+airflow-init-1  | drwxrwxr-x 1 airflow root   4096 Oct 30 13:19 ..
+airflow-init-1  | -rwxrwxrwx 1    1000 1000      0 Oct 30 12:45 .gitkeep
+airflow-init-1  | -rwxrwxrwx 1    1000 root 111276 Oct 30 13:05 airflow.cfg
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/dags:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/logs:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/plugins:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | Running airflow config list to create default config file if missing.
+airflow-init-1  |
+airflow-init-1  | The container is run as root user. For security, consider using a regular user account.
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | 2025-10-30T13:20:06.025420Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:20:06.025690Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:20:06.036905Z [info     ] Migrating the Airflow database [airflow.utils.db] loc=db.py:1129
+airflow-init-1  | 2025-10-30T13:20:06.045974Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:20:06.046099Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:20:06.066127Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:20:06.066236Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | 2025-10-30T13:20:06.081999Z [info     ] Context impl PostgresqlImpl.   [alembic.runtime.migration] loc=migration.py:211
+airflow-init-1  | 2025-10-30T13:20:06.082094Z [info     ] Will assume transactional DDL. [alembic.runtime.migration] loc=migration.py:214
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/flask_limiter/extension.py:324 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.697570Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.714028Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.728138Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.746766Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.760718Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | appbuilder.app is deprecated and will be removed in a future version. Use current_app instead
+airflow-init-1  | 2025-10-30T13:20:10.779936Z [warning  ] appbuilder.app is deprecated and will be removed in a future version. Use current_app instead [flask_appbuilder.base] loc=init_appbuilder.py:228
+airflow-init-1  | /home/airflow/.local/lib/python3.12/site-packages/airflow/providers/fab/auth_manager/fab_auth_manager.py:108 RemovedInAirflow4Warning: The airflow.security.permissions module is deprecated; please see https://airflow.apache.org/docs/apache-airflow/stable/security/deprecated_permissions.html
+airflow-init-1  |
+airflow-init-1  | Files in shared volumes:
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/config:
+airflow-init-1  | total 120
+airflow-init-1  | drwxrwxrwx 2    1000 1000   4096 Oct 30 13:05 .
+airflow-init-1  | drwxrwxr-x 1 airflow root   4096 Oct 30 13:19 ..
+airflow-init-1  | -rwxrwxrwx 1    1000 1000      0 Oct 30 12:45 .gitkeep
+airflow-init-1  | -rwxrwxrwx 1    1000 root 111276 Oct 30 13:05 airflow.cfg
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/dags:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/logs:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/plugins:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2    1000 1000 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 airflow root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1    1000 1000    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | Change ownership of files in /opt/airflow to 1000:0
+airflow-init-1  |
+airflow-init-1  |
+airflow-init-1  | Change ownership of files in shared volumes to 1000:0
+airflow-init-1  |
+airflow-init-1  | ownership of '/opt/airflow/logs/.gitkeep' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/logs' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/dags/.gitkeep' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/dags' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/plugins/.gitkeep' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/plugins' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/config/airflow.cfg' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/config/.gitkeep' retained as 1000:root
+airflow-init-1  | ownership of '/opt/airflow/config' retained as 1000:root
+airflow-init-1  |
+airflow-init-1  | Files in shared volumes:
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/config:
+airflow-init-1  | total 120
+airflow-init-1  | drwxrwxrwx 2 1000 root   4096 Oct 30 13:05 .
+airflow-init-1  | drwxrwxr-x 1 1000 root   4096 Oct 30 13:19 ..
+airflow-init-1  | -rwxrwxrwx 1 1000 root      0 Oct 30 12:45 .gitkeep
+airflow-init-1  | -rwxrwxrwx 1 1000 root 111276 Oct 30 13:05 airflow.cfg
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/dags:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2 1000 root 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 1000 root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1 1000 root    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/logs:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2 1000 root 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 1000 root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1 1000 root    0 Oct 30 12:45 .gitkeep
+airflow-init-1  |
+airflow-init-1  | /opt/airflow/plugins:
+airflow-init-1  | total 8
+airflow-init-1  | drwxr-xr-x 2 1000 root 4096 Oct 30 12:45 .
+airflow-init-1  | drwxrwxr-x 1 1000 root 4096 Oct 30 13:19 ..
+airflow-init-1  | -rw-r--r-- 1 1000 root    0 Oct 30 12:45 .gitkeep
+airflow-init-1 exited with code 0
+
+cat /etc/my.cnf
+[client]
+#password       = your_password
+port            = 3306
+socket          = /tmp/mysql.sock
+
+[mysqld]
+port            = 3306
+socket          = /tmp/mysql.sock
+datadir = /www/server/data
+default_storage_engine = InnoDB
+performance_schema_max_table_instances = 400
+table_definition_cache = 400
+skip-external-locking
+key_buffer_size = 1024M
+max_allowed_packet = 100G
+table_open_cache = 4096
+sort_buffer_size = 16M
+net_buffer_length = 4K
+read_buffer_size = 16M
+read_rnd_buffer_size = 256K
+myisam_sort_buffer_size = 256M
+thread_cache_size = 512
+tmp_table_size = 512M
+default_authentication_plugin = mysql_native_password
+lower_case_table_names = 1
+sql-mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+
+explicit_defaults_for_timestamp = true
+#skip-name-resolve
+max_connections = 500
+max_connect_errors = 100
+open_files_limit = 65535
+
+log-bin=mysql-bin
+binlog_format=mixed
+server-id = 1
+binlog_expire_logs_seconds = 600000
+slow_query_log=1
+slow-query-log-file=/www/server/data/mysql-slow.log
+long_query_time=3
+#log_queries_not_using_indexes=on
+early-plugin-load = ""
+
+
+innodb_data_home_dir = /www/server/data
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_log_group_home_dir = /www/server/data
+innodb_buffer_pool_size = 4096M
+innodb_log_file_size = 2048M
+innodb_log_buffer_size = 512M
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 50
+innodb_max_dirty_pages_pct = 90
+innodb_read_io_threads = 384
+innodb_write_io_threads = 384
+
+[mysqldump]
+quick
+max_allowed_packet = 500M
+
+[mysql]
+no-auto-rehash
+
+[myisamchk]
+key_buffer_size = 1024M
+sort_buffer_size = 16M
+read_buffer = 2M
+write_buffer = 2M
+
+[mysqlhotcopy]
+interactive-timeout
