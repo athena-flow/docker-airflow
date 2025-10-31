@@ -14,6 +14,9 @@ http://49.232.232.231:8080/
 admin
 admin
 
+sudo docker exec -it 2f2ad0105ad9 bash
+airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+
 sudo docker compose up airflow-init
 sudo docker compose down --volumes --remove-orphans
 sudo docker compose up
